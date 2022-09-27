@@ -18,7 +18,6 @@ class ViewController: UIViewController {
         
     }
     @IBAction func gradeButtonAction(_ sender: UIButton) {
-        print("->\(gradeIn.text)")
         if gradeIn.text! != "" {
         passOutput.text = "\(pass(Double(gradeIn.text!) ?? 0.00)) \(letter(Double(gradeIn.text!) ?? 0.00))"
         }
@@ -57,7 +56,7 @@ class ViewController: UIViewController {
         }
     }
     func points(_ num1: Double, _ num2: Double)->(Double,String){
-        let numOut = num1 / num2
+        let numOut = (num1 / num2)*100
         let letter = letter(numOut)
         return (numOut,letter)
     }
