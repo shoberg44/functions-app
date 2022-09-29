@@ -19,13 +19,13 @@ class ViewController: UIViewController {
     }
     @IBAction func gradeButtonAction(_ sender: UIButton) {
         if gradeIn.text! != "" {
-        passOutput.text = "\(pass(Double(gradeIn.text!) ?? 0.00)) \(letter(Double(gradeIn.text!) ?? 0.00))"
+        passOutput.text = "\(pass(Double(gradeIn.text!) ?? 1.00)) \(letter(Double(gradeIn.text!) ?? 1.00))"
         }
         else{
-            let temp = points(Double(points1In.text!) ?? 0.00,Double(points2In.text!) ?? 0.00)
+            let temp = points(Double(points1In.text!) ?? 0.00,Double(points2In.text!) ?? 1.00)
             passOutput.text = "\(temp.0) \(temp.1)"
         }
-        
+        gradeIn.text = ""
     }
     
     func pass(_ num: Double)->String{
